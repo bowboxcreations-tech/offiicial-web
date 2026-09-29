@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* NEO-BRUTALIST THEME — exact palette */
+  --color-brand-primary: #c54c82; /* Deep Pink — primary */
+  --color-brand-secondary: #ec729c; /* Bright Pink — secondary */
+  --color-brand-tertiary: #f4aeba; /* Soft Pink — tertiary */
+  --color-brand-neutral: #fdfdcb; /* Pale Yellow — neutral / background */
+
+  /* Legacy aliases (kept so existing class names keep resolving) */
+  --color-brand-cream: #fdfdcb;
+  --color-brand-peach: #c54c82;
+  --color-brand-rose: #f4aeba;
+  --color-brand-pink: #ec729c;
+
+  /* Papyrus for display / headings / buttons, Georgia for body / labels */
+  --font-display: Papyrus, "Papyrus Condensed", "Herculanum", Georgia, serif;
+  --font-body: Georgia, "Times New Roman", Times, serif;
+  --font-sans: Georgia, "Times New Roman", Times, serif;
+
+  --animate-marquee: marquee 20s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+:root {
+  --primary: #c54c82;
+  --secondary: #ec729c;
+  --tertiary: #f4aeba;
+  --neutral: #fdfdcb;
+  --ink: #000000;
+  --font-display: Papyrus, "Papyrus Condensed", "Herculanum", Georgia, serif;
+  --font-body: Georgia, "Times New Roman", Times, serif;
+  --shadow-hard: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Flat solid page background + Georgia body copy */
+html, body {
+  background: #fdfdcb;
+  color: #000000;
+  font-family: var(--font-body);
+}
+
+/* Every piece of text is pure black — no gray, no muted, no white */
+body, body * {
+  color: #000000 !important;
+}
+::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+/* ── Papyrus: headings, display text, button labels — bold, punchy, tight ── */
+h1, h2, h3, h4, h5, h6,
+button,
+.font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.05em; /* tracking-tighter */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+/* Georgia: body text, paragraphs, small UI labels */
+p, span, li, label, input, textarea, select, td, th, a, small {
+  font-family: var(--font-body);
+}
+
+/* ── Brutalist form controls: thick borders, blocky, aggressive focus ── */
+input, textarea, select {
+  border: 4px solid #000 !important;
+  border-radius: 0 !important;
+  background: #fdfdcb;
+  color: #000;
+}
+
+input:focus, textarea:focus, select:focus {
+  background: #f4aeba !important; /* soft-pink aggressive focus state */
+  outline: 3px solid #000 !important;
+  outline-offset: 0;
+}
+
+/* Blocky everything: no soft corners anywhere */
+*, *::before, *::after {
+  border-radius: 0 !important;
+}
+
+/* ── Brutalist hard-shadow utilities (sharp offset, zero blur) ── */
+.clay-shadow,
+.clay-shadow-dark,
+.hard-shadow {
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.clay-shadow-puff {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Flat dot-matrix helper (solid black dots, no gradient function) */
+.halftone {
+  background-color: #fdfdcb;
+  background-image: none;
+}
+
+/* Scrollbar Hide Utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
