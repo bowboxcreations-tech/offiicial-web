@@ -380,14 +380,12 @@ function ShopContent() {
                           onClick={() => addToCart(product.id)}
                           whileTap={{ scale: 0.98 }}
                           className="flex-1 py-3 rounded-none font-black text-xs relative overflow-hidden transition-all duration-75"
-                          style={{
+                         style={{
                             background: addedIds.has(product.id)
                               ? "#ec729c"
-                              : "#000000",
-                            color: addedIds.has(product.id)
-                              ? "#fdfdcb"
-                              : "#ec729c",
-                            border: `4px solid ${addedIds.has(product.id) ? "transparent" : "#000000"}`,
+                              : "#fdfdcb",
+                            color: "#000000",
+                            border: "4px solid #000000",
                             boxShadow: "6px 6px 0px 0px rgba(0,0,0,1)",
                           }}
                         >
