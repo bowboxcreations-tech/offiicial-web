@@ -641,13 +641,6 @@ export default function Home() {
                   alt={`Banner ${i + 1} Clone`}
                   className="w-full h-full object-cover"
                 />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "#000000",
-                  }}
-                />
               </div>
             ))}
           </motion.div>
