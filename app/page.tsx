@@ -595,14 +595,6 @@ export default function Home() {
                   alt={`Banner ${i + 1}`}
                   className="w-full h-full object-cover"
                 />
-                {/* Dark overlay for content readability */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "#000000",
-                  }}
-                />
               </div>
             ))}
           </motion.div>
